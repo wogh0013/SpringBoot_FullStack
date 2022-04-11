@@ -17,13 +17,15 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+//스프링3의 root_context.xml 대체
 @Configuration
 @PropertySource("classpath:/application.properties") //설정파일 위치 지정해주기 yml 파일을 써서 설정을 하기도 한다 
 public class DatabaseConfig implements WebMvcConfigurer{
 
 	@Value("${fileUploadPath}")
 	String fileUploadPath;
-	// 
+	
+	//@Bean은 객체 만들기 -------- MyBatis 연동 시작
 	@Bean
 	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
 		//System.out.println("****************************************"); 

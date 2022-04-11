@@ -23,4 +23,22 @@ public class HelpDaoImpl implements HelpDao{
 	public HelpDto getGuideView(int id) {
 		return sm.selectOne("Help_getGuide", id);
 	}
+	
+	@Override
+	public void insert(HelpDto dto) {
+		sm.insert("Help_insert", dto);
+		
+	}
+	
+	@Override
+	public void updateHit(int id) {
+		sm.update("Help_updateHit", id);
+	}
+
+	@Override
+	public List<HelpDto> getHighLightList() {
+		return sm.selectList("Help_HighlightList");
+	}
+	
+	
 }

@@ -32,6 +32,31 @@
 		where center_id=#{center_id}
 	</select>
 	
+	<insert id="Help_insert" parameterType="HelpDto">
+		insert into customer_center
+		(
+			center_image,
+			center_title,
+			center_contents,
+			center_create,
+			center_category,
+			hit,
+			delyn,
+			image_name
+		)
+		values
+		(
+			#{center_image},
+			#{center_title},
+			#{center_contents},
+			now(),
+			#{center_category},
+			0,
+			'N',
+			#{image_name}
+		)
+	</insert>
+	
 </mapper>
 
 

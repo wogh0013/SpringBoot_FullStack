@@ -23,4 +23,15 @@ public class HelpServiceImpl implements HelpService{
 	public HelpDto getGuideView(int id) {
 		return dao.getGuideView(id);
 	}
+
+	@Override
+	public void insert(HelpDto dto) {
+		dao.insert(dto);
+	}
+
+	@Override
+	public void updateHit(int id) {
+		dao.updateHit(id);
+	}
+	
 }
