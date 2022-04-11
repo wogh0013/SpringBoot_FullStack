@@ -33,8 +33,13 @@ public class HelpController {
 	HelpService service;
 	
 	@GetMapping(value="/guideList")
-	List<HelpDto> guideList(){
-		return service.getGuideList();
+	HashMap<String, Object> guideList(){
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("guideList", service.getGuideList());
+		map.put("highLightList", service.getHighLightList());
+		
+		return map;
 	}
 	
 	@GetMapping(value="/view/{id}")

@@ -19,6 +19,7 @@
 		from customer_center
 		where center_category='2'
 		order by hit desc, center_id desc
+		limit 0, 5
 	</select>
 	
 	<update id="Help_updateHit" parameterType="Integer">
